@@ -22,13 +22,13 @@ export default function SettingsPage() {
         </div>
       </header>
 
-      <section className="grid gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)]">
+      <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)]">
         <div className="space-y-4 rounded-xl border border-border bg-surface p-4 shadow-sm">
           <h2 className="text-sm font-semibold text-text">
             Executive roles & access
           </h2>
           <div className="space-y-3 text-sm text-muted">
-            <div className="flex items-start justify-between gap-4 rounded-lg bg-surface-alt/40 px-3 py-2">
+            <div className="flex flex-wrap items-start justify-between gap-3 rounded-lg bg-surface-alt/40 px-3 py-2">
               <div>
                 <p className="font-medium text-text">Leadership roles</p>
                 <p className="mt-1 text-xs text-muted">
@@ -36,11 +36,11 @@ export default function SettingsPage() {
                   and metric packs.
                 </p>
               </div>
-              <span className="rounded-full border border-border bg-surface px-2 py-1 text-[11px] font-medium text-text">
+              <span className="rounded-full border border-border bg-surface-alt/40 px-3 py-1 text-[11px] font-medium text-text">
                 5 roles
               </span>
             </div>
-            <div className="flex items-start justify-between gap-4 rounded-lg bg-surface-alt/40 px-3 py-2">
+            <div className="flex flex-wrap items-start justify-between gap-3 rounded-lg bg-surface-alt/40 px-3 py-2">
               <div>
                 <p className="font-medium text-text">Access policy</p>
                 <p className="mt-1 text-xs text-muted">
@@ -48,7 +48,7 @@ export default function SettingsPage() {
                   company-level KPIs visible to the C-suite.
                 </p>
               </div>
-              <span className="rounded-full border border-border bg-surface px-2 py-1 text-[11px] font-medium text-success">
+              <span className="rounded-full border border-border bg-surface-alt/40 px-3 py-1 text-[11px] font-medium text-success">
                 Least privilege
               </span>
             </div>
@@ -60,7 +60,7 @@ export default function SettingsPage() {
             Time zone & business calendar
           </h2>
           <div className="space-y-3 text-sm text-muted">
-            <div className="flex items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <p className="font-medium text-text">Primary time zone</p>
                 <p className="mt-1 text-xs text-muted">
@@ -71,7 +71,7 @@ export default function SettingsPage() {
                 UTC-5 (ET)
               </span>
             </div>
-            <div className="flex items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <p className="font-medium text-text">Fiscal year</p>
                 <p className="mt-1 text-xs text-muted">
@@ -86,7 +86,7 @@ export default function SettingsPage() {
         </div>
       </section>
 
-      <section className="grid gap-4 lg:grid-cols-3">
+      <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <div className="rounded-xl border border-border bg-surface p-4 shadow-sm">
           <h2 className="text-sm font-semibold text-text">Currency & units</h2>
           <div className="mt-3 space-y-2 text-xs text-muted">

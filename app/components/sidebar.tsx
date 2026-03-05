@@ -2,41 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  LayoutDashboard,
-  LineChart,
-  HeartPulse,
-  Bell,
-  Settings,
-} from "lucide-react";
-
-const navItems = [
-  {
-    label: "Overview",
-    href: "/",
-    icon: LayoutDashboard,
-  },
-  {
-    label: "Revenue",
-    href: "/revenue-intelligence",
-    icon: LineChart,
-  },
-  {
-    label: "Customer Health",
-    href: "/customer-health",
-    icon: HeartPulse,
-  },
-  {
-    label: "Alerts",
-    href: "/alerts-settings",
-    icon: Bell,
-  },
-  {
-    label: "Settings",
-    href: "/settings",
-    icon: Settings,
-  },
-] as const;
+import { NAV_ITEMS } from "./nav-items";
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -58,7 +24,7 @@ export function Sidebar() {
       </div>
 
       <nav className="flex-1 space-y-1 text-sm">
-        {navItems.map((item) => {
+        {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           const isActive =
             item.href === "/"

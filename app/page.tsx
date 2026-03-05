@@ -8,7 +8,7 @@ const dauMauRatio = 25.4;
 export default function ExecutiveOverviewPage() {
   return (
     <div className="space-y-6">
-      <section className="grid gap-4 md:grid-cols-3">
+      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         <div className="rounded-xl border border-border bg-surface p-4">
           <p className="text-xs font-medium uppercase tracking-wide text-muted">
             ARR
@@ -75,7 +75,7 @@ export default function ExecutiveOverviewPage() {
         </div>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-3">
+      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         <div className="rounded-xl border border-border bg-surface p-4">
           <p className="text-xs font-medium uppercase tracking-wide text-muted">
             Churn rate
@@ -148,8 +148,8 @@ export default function ExecutiveOverviewPage() {
         </div>
       </section>
 
-      <section className="grid gap-4 lg:grid-cols-3">
-        <div className="lg:col-span-2">
+      <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="md:col-span-2">
           <RevenueTrendChart />
         </div>
         <div className="flex flex-col gap-4">

@@ -27,8 +27,8 @@ export default function RevenueIntelligencePage() {
         </div>
       </header>
 
-      <section className="grid gap-4 lg:grid-cols-3">
-        <div className="rounded-xl border border-border bg-surface p-4 shadow-sm transition-transform transition-colors duration-150 hover:-translate-y-0.5 hover:border-primary lg:col-span-2">
+      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="rounded-xl border border-border bg-surface p-4 shadow-sm transition-transform transition-colors duration-150 hover:-translate-y-0.5 hover:border-primary xl:col-span-2">
           <h2 className="text-sm font-semibold text-text">
             MRR waterfall breakdown
           </h2>
@@ -56,7 +56,7 @@ export default function RevenueIntelligencePage() {
         </div>
       </section>
 
-      <section className="grid gap-4 lg:grid-cols-3">
+      <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <div className="rounded-xl border border-border bg-surface p-4 shadow-sm transition-transform transition-colors duration-150 hover:-translate-y-0.5 hover:border-primary">
           <h2 className="text-sm font-semibold text-text">
             CAC vs LTV ratios
