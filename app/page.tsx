@@ -1,65 +1,181 @@
-import Image from "next/image";
+import { RevenueTrendChart } from "./components/revenue-trend-chart";
+import { AnimatedNumber } from "./components/animated-number";
 
-export default function Home() {
+const dau = 1240;
+const mau = 4890;
+const dauMauRatio = 25.4;
+
+export default function ExecutiveOverviewPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="space-y-6">
+      <section className="grid gap-4 md:grid-cols-3">
+        <div className="rounded-xl border border-border bg-surface p-4">
+          <p className="text-xs font-medium uppercase tracking-wide text-muted">
+            ARR
+          </p>
+          <div className="mt-3 flex items-baseline justify-between gap-3">
+            <div className="text-2xl font-semibold leading-none text-text">
+              <AnimatedNumber
+                value={42.4}
+                decimals={1}
+                prefix="$"
+                suffix="M"
+              />
+            </div>
+            <span className="text-xs font-medium text-success">
+              +31% YoY
+            </span>
+          </div>
+          <p className="mt-2 text-xs text-muted">
+            Annual recurring revenue run rate across all active subscriptions.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="rounded-xl border border-border bg-surface p-4">
+          <p className="text-xs font-medium uppercase tracking-wide text-muted">
+            MRR
+          </p>
+          <div className="mt-3 flex items-baseline justify-between gap-3">
+            <div className="text-2xl font-semibold leading-none text-text">
+              <AnimatedNumber
+                value={3.53}
+                decimals={2}
+                prefix="$"
+                suffix="M"
+              />
+            </div>
+            <span className="text-xs font-medium text-accent">
+              +$256K net
+            </span>
+          </div>
+          <p className="mt-2 text-xs text-muted">
+            New: $210K · Expansion: $88K · Churn: -$42K this month.
+          </p>
         </div>
-      </main>
+
+        <div className="rounded-xl border border-border bg-surface p-4">
+          <p className="text-xs font-medium uppercase tracking-wide text-muted">
+            NRR
+          </p>
+          <div className="mt-3 flex items-baseline justify-between gap-3">
+            <div className="text-2xl font-semibold leading-none text-text">
+              <AnimatedNumber
+                value={108}
+                decimals={0}
+                suffix="%"
+              />
+            </div>
+            <span className="text-xs font-medium text-success">
+              Healthy
+            </span>
+          </div>
+          <p className="mt-2 text-xs text-muted">
+            Net revenue retention comfortably above the 100% growth benchmark.
+          </p>
+        </div>
+      </section>
+
+      <section className="grid gap-4 md:grid-cols-3">
+        <div className="rounded-xl border border-border bg-surface p-4">
+          <p className="text-xs font-medium uppercase tracking-wide text-muted">
+            Churn rate
+          </p>
+          <div className="mt-3 flex items-baseline justify-between gap-3">
+            <div className="text-2xl font-semibold leading-none text-text">
+              <AnimatedNumber
+                value={1.8}
+                decimals={1}
+                suffix="%"
+              />
+            </div>
+            <span className="text-xs font-medium text-error">
+              Logo
+            </span>
+          </div>
+          <p className="mt-2 text-xs text-muted">
+            1.8% logo churn and 1.2% revenue churn on a rolling monthly basis.
+          </p>
+        </div>
+
+        <div className="rounded-xl border border-border bg-surface p-4">
+          <p className="text-xs font-medium uppercase tracking-wide text-muted">
+            DAU / MAU
+          </p>
+          <div className="mt-3 flex items-baseline justify-between gap-3">
+            <div className="text-2xl font-semibold leading-none text-text">
+              <AnimatedNumber
+                value={dauMauRatio}
+                decimals={1}
+                suffix="%"
+              />
+            </div>
+            <span className="text-xs font-medium text-accent">
+              Engagement
+            </span>
+          </div>
+          <p className="mt-2 text-xs text-muted">
+            <span className="font-medium text-text">
+              <AnimatedNumber value={dau} /> DAU
+            </span>{" "}
+            and{" "}
+            <span className="font-medium text-text">
+              <AnimatedNumber value={mau} /> MAU
+            </span>{" "}
+            with steady product stickiness.
+          </p>
+        </div>
+
+        <div className="rounded-xl border border-border bg-surface p-4">
+          <p className="text-xs font-medium uppercase tracking-wide text-muted">
+            Pipeline
+          </p>
+          <div className="mt-3 flex items-baseline justify-between gap-3">
+            <div className="text-2xl font-semibold leading-none text-text">
+              <AnimatedNumber
+                value={18.6}
+                decimals={1}
+                prefix="$"
+                suffix="M"
+              />
+            </div>
+            <span className="text-xs font-medium text-success">
+              28% win rate
+            </span>
+          </div>
+          <p className="mt-2 text-xs text-muted">
+            Average deal size of $42K with coverage to support current targets.
+          </p>
+        </div>
+      </section>
+
+      <section className="grid gap-4 lg:grid-cols-3">
+        <div className="lg:col-span-2">
+          <RevenueTrendChart />
+        </div>
+        <div className="flex flex-col gap-4">
+          <div className="rounded-xl border border-border bg-surface p-4">
+            <h2 className="text-sm font-semibold text-text">
+              Executive focus for this month
+            </h2>
+            <p className="mt-2 text-sm text-muted">
+              Revenue is tracking ahead of plan, while churn remains within
+              target bands. The main risks are concentrated in a small set of
+              high-value renewals coming due next quarter.
+            </p>
+          </div>
+          <div className="rounded-xl border border-border bg-surface-alt p-4">
+            <h2 className="text-sm font-semibold text-text">
+              Active alerts summary
+            </h2>
+            <p className="mt-2 text-sm text-muted">
+              No critical alerts triggered in the last 7 days. Two accounts
+              moved into the at-risk band based on declining product usage and
+              open support tickets.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
+
