@@ -27,7 +27,7 @@ export default function RootLayout({
         <div className="flex min-h-screen bg-background">
           <Sidebar />
           <div className="flex min-h-screen flex-1 flex-col">
-            <div className="flex min-h-screen w-full flex-col px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1200px] mx-auto">
+            <div className="flex min-h-screen w-full flex-col px-4 sm:px-6 lg:px-8 xl:px-10">
               <header className="sticky top-0 z-20 -mx-4 border-b border-border bg-background/95 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 xl:-mx-10 xl:px-10">
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex flex-col gap-1">
